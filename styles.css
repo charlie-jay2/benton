@@ -1,0 +1,149 @@
+.seats-container {
+  display: flex;
+  flex-direction: column; /* Arrange rows vertically */
+  gap: 20px; /* Increased spacing between rows for better visibility */
+}
+
+.row {
+  display: flex; /* Arrange seats within a row horizontally */
+  justify-content: center; /* Center seats in the row */
+  gap: 5px;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    145deg,
+    #303030,
+    #1a1a1a
+  ); /* Dark color for the cushion effect */
+  border-radius: 8px 8px 2px 2px; /* Rounded top edges */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center; /* Center text */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  transition: transform 0.2s ease, background 0.3s ease; /* Smooth background color transition */
+}
+
+/* Available seat styling */
+.seat:hover {
+  transform: scale(1.1); /* Slight zoom on hover for an interactive effect */
+  background: linear-gradient(145deg, #505050, #3a3a3a);
+}
+
+/* Booked seat styling */
+.seat.booked {
+  background: linear-gradient(
+    145deg,
+    #5a5a5a,
+    #444444
+  ); /* Gray to indicate unavailability */
+  color: #a0a0a0;
+  cursor: not-allowed;
+  box-shadow: none; /* Remove shadow for a "disabled" look */
+}
+
+/* Selected seat styling */
+.seat.selected {
+  background: linear-gradient(
+    145deg,
+    #004f9a,
+    #003366
+  ); /* Blue gradient for selected */
+  color: #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+}
+
+#booked-seats {
+  margin: 20px auto;
+  max-width: 500px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booked-seat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.booked-seat button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.booked-seat button:hover {
+  background-color: #e60000;
+}
+
+/* Refresh button styling */
+.refresh-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.refresh-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.refresh-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-left: 5px;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+.row:nth-child(5) {
+  background-color: #ececec; /* Light background for Row E to differentiate */
+}
